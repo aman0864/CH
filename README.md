@@ -15,6 +15,6 @@ plt.show()
 
 ### The above code will produce the following output
 
-## ![Image Name](tutorial_1.svg "This will appear if you will hover on image")
+## ![Image Name](Figure_1.svg "This will appear if you will hover on image")
 
 ---
