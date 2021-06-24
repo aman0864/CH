@@ -1,0 +1,200 @@
+Date 24-06-2021
+
+More in Seaborn Line Plot
+
+
++*In[1]:*+
+[source, ipython3]
+----
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+----
+
+
++*In[2]:*+
+[source, ipython3]
+----
+data=pd.read_csv('dataset_tips.csv',usecols=['total_bill','tip','size','sex','day'])
+data
+----
+
+
++*Out[2]:*+
+----
+[cols=",,,,,",options="header",]
+|===
+| |total_bill |tip |sex |day |size
+|0 |16.99 |1.01 |Female |Sun |2
+|1 |10.34 |1.66 |Male |Sun |3
+|2 |21.01 |3.50 |Male |Sun |3
+|3 |23.68 |3.31 |Male |Sun |2
+|4 |24.59 |3.61 |Female |Sun |4
+|... |... |... |... |... |...
+|239 |29.03 |5.92 |Male |Sat |3
+|240 |27.18 |2.00 |Female |Sat |2
+|241 |22.67 |2.00 |Male |Sat |2
+|242 |17.82 |1.75 |Male |Sat |2
+|243 |18.78 |3.00 |Female |Thur |2
+|===
+
+244 rows × 5 columns
+----
+
+
++*In[3]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data)
+----
+
+
++*Out[3]:*+
+----<AxesSubplot:xlabel='size', ylabel='total_bill'>
+![png](output_4_1.png)
+----
+
+
++*In[4]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex')
+----
+
+
++*Out[4]:*+
+----<AxesSubplot:xlabel='size', ylabel='total_bill'>
+![png](output_5_1.png)
+----
+
+
++*In[5]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex')
+----
+
+
++*Out[5]:*+
+----<AxesSubplot:xlabel='size', ylabel='total_bill'>
+![png](output_6_1.png)
+----
+
+
++*In[6]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex',palette='hot')
+----
+
+
++*Out[6]:*+
+----<AxesSubplot:xlabel='size', ylabel='total_bill'>
+![png](output_7_1.png)
+----
+
+
++*In[7]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex',palette='hot',dashes=False)
+----
+
+
++*Out[7]:*+
+----<AxesSubplot:xlabel='size', ylabel='total_bill'>
+![png](output_8_1.png)
+----
+
+
++*In[8]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex',palette='hot',dashes=False,markers=['o','v'])
+----
+
+
++*Out[8]:*+
+----<AxesSubplot:xlabel='size', ylabel='total_bill'>
+![png](output_9_1.png)
+----
+
+
++*In[9]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex',palette='hot',dashes=False,markers=['o','v'],legend=False)
+----
+
+
++*Out[9]:*+
+----<AxesSubplot:xlabel='size', ylabel='total_bill'>
+![png](output_10_1.png)
+----
+
+
++*In[10]:*+
+[source, ipython3]
+----
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex',palette='hot',dashes=False,markers=['o','v'])
+plt.xlabel('X Axis',size=20,rotation=45,c='deepskyblue')
+plt.ylabel('Y Axis')
+plt.title('Line Plot')
+----
+
+
++*Out[10]:*+
+----Text(0.5, 1.0, 'Line Plot')
+![png](output_11_1.png)
+----
+
+
++*In[11]:*+
+[source, ipython3]
+----
+sns.set(style='darkgrid')
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex',palette='hot',dashes=False,markers=['o','v'])
+plt.xlabel('X Axis',size=20,rotation=45,c='deepskyblue')
+plt.ylabel('Y Axis')
+plt.title('Line Plot')
+----
+
+
++*Out[11]:*+
+----Text(0.5, 1.0, 'Line Plot')
+![png](output_12_1.png)
+----
+
+
++*In[12]:*+
+[source, ipython3]
+----
+plt.figure(figsize=(16,9))
+sns.lineplot(x='size',y='total_bill',data=data,hue='sex',style='sex',palette='hot',dashes=False,markers=['o','v'])
+plt.xlabel('X Axis',size=20,rotation=45,c='deepskyblue')
+plt.ylabel('Y Axis')
+plt.title('Line Plot')
+----
+
+
++*Out[12]:*+
+----Text(0.5, 1.0, 'Line Plot')
+![png](output_13_1.png)
+----
+
+
++*In[13]:*+
+[source, ipython3]
+----
+plt.figure(figsize=(16,9))
+sns.lineplot(x='size',y='total_bill',data=data,hue='day',style='day',palette='hot',dashes=False)
+plt.xlabel('X Axis',size=20,rotation=45,c='deepskyblue')
+plt.ylabel('Y Axis')
+plt.title('Line Plot')
+----
+
+
++*Out[13]:*+
+----Text(0.5, 1.0, 'Line Plot')
+![png](output_14_1.png)
+----
